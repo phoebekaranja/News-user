@@ -57,20 +57,20 @@ def process_results(sources_list):
 
     return sources_results
 
-# def get_articles(id):
-#     get_articles_details_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
-#     print(get_articles_details_url)
-#
-#     with urllib.request.urlopen(get_articles_details_url) as url:
-#         articles_details_data = url.read()
-#         articles_details_response = json.loads(articles_details_data)
-#
-#         articles_object = None
-#         if articles_details_response["articles"]:
-#             articles_list=articles_details_response['articles']
-#             articles_object= process_source_results(articles_list)
-#
-#     return articles_object
+def get_articles(id):
+    get_articles_details_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
+    print(get_articles_details_url)
+
+    with urllib.request.urlopen(get_articles_details_url) as url:
+        articles_details_data = url.read()
+        articles_details_response = json.loads(articles_details_data)
+
+        articles_object = None
+        if articles_details_response["articles"]:
+            articles_list=articles_details_response['articles']
+            articles_object= process_source_results(articles_list)
+
+    return articles_object
 
 def process_source_results(news_list):
     articles_object=[]

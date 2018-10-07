@@ -4,7 +4,7 @@ Unofficial News App through News API for [News API](https://newsapi.org/).
 The app is live here [News.io](https://news-io.herokuapp.com/).
 
 
-Features
+Feature
 ========
 
 - Built with Python 3.6

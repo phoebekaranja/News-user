@@ -1,7 +1,7 @@
 from flask import flask
 from flask import Blueprint
 from .config import DevConfig
- #Initializing application
+ Initializing application
 main = Blueprint('main',__name__)
 from . import views,error
 def create_app(config_name):

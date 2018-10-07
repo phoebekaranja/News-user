@@ -42,21 +42,21 @@ def configure_request(app):
 #
 #     return sources_results
 #
-# def process_results(sources_list):
-#     sources_results=[]
-#     for source_item in sources_list:
-#         id=source_item.get('id')
-#         name=source_item.get('name')
-#         description=source_item.get('description')
-#         language=source_item.get('language')
-#
-#         if id:
-#             source_object = Sources(id,name,description,language)
-#             sources_results.append(source_object)
-#     # print(sources_results)
-#
-#     return sources_results
-#
+def process_results(sources_list):
+    sources_results=[]
+    for source_item in sources_list:
+        id=source_item.get('id')
+        name=source_item.get('name')
+        description=source_item.get('description')
+        language=source_item.get('language')
+
+        if id:
+            source_object = Sources(id,name,description,language)
+            sources_results.append(source_object)
+    # print(sources_results)
+
+    return sources_results
+
 # def get_articles(id):
 #     get_articles_details_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
 #     print(get_articles_details_url)
@@ -71,23 +71,23 @@ def configure_request(app):
 #             articles_object= process_source_results(articles_list)
 #
 #     return articles_object
-#
-# def process_source_results(news_list):
-#     articles_object=[]
-#     for news_item in news_list:
-#         author = news_item.get('author')
-#         title = news_item.get('title')
-#         description = news_item.get('description')
-#         url = news_item.get('url')
-#         publishedAt = news_item.get('publishedAt')
-#         urlToImage=news_item.get('urlToImage')
-#
-#         if urlToImage:
-#             source_news_object = Articles(author,title,description,url,publishedAt,urlToImage)
-#             articles_object.append(source_news_object)
-#     # print(sources_results)
-#
-#     return articles_object
+
+def process_source_results(news_list):
+    articles_object=[]
+    for news_item in news_list:
+        author = news_item.get('author')
+        title = news_item.get('title')
+        description = news_item.get('description')
+        url = news_item.get('url')
+        publishedAt = news_item.get('publishedAt')
+        urlToImage=news_item.get('urlToImage')
+
+        if urlToImage:
+            source_news_object = Articles(author,title,description,url,publishedAt,urlToImage)
+            articles_object.append(source_news_object)
+    # print(sources_results)
+
+    return articles_object
 
 def get_category(category):
     get_category_url = 'https://newsapi.org/v2/everything?q={}&sortBy=relevancy&apiKey={}'.format(category, api_key)

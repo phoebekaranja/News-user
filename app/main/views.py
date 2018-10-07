@@ -24,15 +24,15 @@ print(articles)
     title=f'{articles.title}'
 
 
-# @main.route('/categories/<category_name>')
-# def categories(category_name):
-#
-#     '''
-#     View  page function that returns the details page and its data
-#     '''
-#     cat="cherucole"
-#     category=get_category(category_name)
-#     print(category_name)
-#     category_name1=category_name
-#
-#     return render_template('categories.html', category=category,name_source=id,category_name1=category_name1)
+@main.route('/categories/<category_name>')
+def categories(category_name):
+
+    '''
+    View  page function that returns the details page and its data
+    '''
+    category="phoebe"
+    category=get_category(category_name)
+    print(category_name)
+    category_name1=category_name
+
+    return render_template('categories.html', category=category,name_source=id,category_name1=category_name1)

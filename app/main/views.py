@@ -20,8 +20,8 @@ def articles(id):
     Name = "Phoebe"
     articles=get_articles(id)
     return render_template('articles.html', articles = articles, name=name,name_source=id )
-# print(articles)
-    # title=f'{articles.title}'
+print(articles)
+    title=f'{articles.title}'
 
 
 # @main.route('/categories/<category_name>')

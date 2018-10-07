@@ -11,8 +11,8 @@
 <h3 style="text-align:center; color:bg-danger" class="display-3">Available News Sources</h3>
 <div class="container">
 <div class="card-columns">
+  <ul>
             {% for source in sources %}
-
  <div class="card border-secondary mb-3" style="max-width: 18rem;">
   <div class="card-header"><a href="/articles/{{source.id}}">{{source.name}}</a></div>
   <div class="card-body text-secondary">
@@ -25,5 +25,6 @@
 
       </div>
           </div>
-{% endblock%}
+<!-- {% endblock%} -->
+</ul>
 </body>

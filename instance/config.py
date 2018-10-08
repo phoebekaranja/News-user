@@ -1,2 +1,2 @@
-NEWS_API_KEY ='0e0837dd5a584abf8479e5f3e49a2e3f'
-SECRET_KEY ='mySecretKey'
+NEWS_API_KEY='0e0837dd5a584abf8479e5f3e49a2e3f'
+SECRET_KEY='mySecretKey'

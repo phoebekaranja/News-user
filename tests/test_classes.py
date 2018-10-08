@@ -23,7 +23,7 @@ class SourcesTest(unittest.TestCase):
         '''
         self.assertEqual(self.new_source.id, "Citizen")
         self.assertEqual(self.new_source.name, "Citizen")
-        self.assertEqual(self.new_source.description, "news from around the country")
+        self.assertEqual(self.new_source.description, "news from around the world")
         self.assertEqual(self.new_source.language, "english")
 
 
@@ -67,7 +67,7 @@ class SourcesTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_source = Sources('Citizen',"Citizen",'news from around the Country',"english")
+        self.new_source = Sources('Citizen',"Citizen",'news from around the world',"english")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_source,Sources))
@@ -79,7 +79,7 @@ class SourcesTest(unittest.TestCase):
         '''
         self.assertEqual(self.new_source.id, "Citizen")
         self.assertEqual(self.new_source.name, "Citizen")
-        self.assertEqual(self.new_source.description, "news from around the country")
+        self.assertEqual(self.new_source.description, "news from around the world")
         self.assertEqual(self.new_source.language, "english")
 
 
@@ -92,7 +92,7 @@ class ArticlesTest(unittest.TestCase):
         '''
         Set up method that will run before every Test
         '''
-        self.new_article = Articles('mark',"bitcoin review",'bitcoin news from relevant authorities',"en","2018-09-01T06:27:00Z","http://foxnews.com/img345.jpg")
+        self.new_article = Articles('mark',"bitcoin review",'bitcoin news from relevant authorities',"english","2018-09-01T06:27:00Z","http://foxnews.com/img345.jpg")
 
     def test_instance(self):
         self.assertTrue(isinstance(self.new_article,Articles))

@@ -28,8 +28,8 @@ You will need to:
 ### Installation
 ========
 
-    $ look at my repository <repository_url>
-
+    $ look at my repository <https://github.com/phoebekaranja/News-API.git>
+       Look at my heruko <news-phoebe>
     $ ./start.sh
 
     # it will launch the web page from local server and fetch

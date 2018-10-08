@@ -1,13 +1,5 @@
-from app import app
 import urllib.request,json
 from .models import Articles,Sources
-
-# Getting api key
-api_key = app.config['NEWS_API_KEY']
-# Getting the NEWS base url
-base_url = app.config["NEWS_API_SOURCE_URL"]
-
-
 
 #fetching API key
 api_key= None

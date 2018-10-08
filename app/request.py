@@ -5,13 +5,15 @@ from .models import Articles,Sources
 api_key= None
 
 #getting the news base url
-base_url = None
+base_url_sources= None
+base_url_articles=None
 
 
 def configure_request(app):
-    global api_key,base_url
+    global api_key,base_url_source,base_url_articles
     api_key = app.config['NEWS_API_KEY']
-    base_url = app.config['NEWS_API_SOURCE_URL']
+    base_url_source='https://newsapi.org/v2/sources?apikey=0e0837dd5a584abf8479e5f3e49a2e3f'
+    base_url_articles=app.config['ARTICLES_BASE_URL']
 
 
 def get_sources():
@@ -19,20 +21,20 @@ def get_sources():
     function that returns the json response from url
     :return:
     '''
-    get_sources_url = base_url.format(api_key)
-    with urllib.request.urlopen(get_sources_url) as url:
-        get_sources_data = url.read()
-        get_sources_response = json.loads(get_sources_data)
+    get_source_url = base_url_source.format(api_key)
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
 
-        sources_results = None
+        source_results = None
 
-        if get_sources_response['sources']:
-            sources_results_list = get_sources_response['sources']
-            sources_results=process_results(sources_results_list)
+        if get_source_response['sources']:
+            source_results_list = get_source_response['sources']
+            source_results=process_results(source_results_list)
 
-        sources_results=sources_results[0:15]
+        # source_results=source_results[0:15]
 
-    return sources_results
+    return source_results
 
 def process_results(sources_list):
     sources_results=[]
